@@ -61,7 +61,7 @@ const Home = () => {
                 placeholder='Enter name...'
                 onChange={(e) => handleSearch(e.target.value)}
             />
-            {loading ? <p>Loading Users...</p> : <div className='flex md:flex-wrap md:flex-row flex-col justify-center my-8'>
+            {loading ? <p className='mx-auto'>Loading Users...</p> : <div className='flex md:flex-wrap md:flex-row flex-col justify-center my-8'>
                 {filteredUsers.length > 0 ? filteredUsers.map((user) => (
                     <div key={user.id} className='m-2 p-2 border-2 border-gray-500 rounded-md flex flex-col gap-2.5 md:w-1/5'>
                         <img src={user.avatar} alt={user.first_name} className='rounded-full mx-auto w-40 h-40' />
@@ -84,13 +84,13 @@ const Home = () => {
             {search.trim()==="" &&
                 <div className='flex justify-center gap-4'>
                     <button
-                        className={`border rounded-sm p-2 w-24 ${page == 1 ? 'cursor-not-allowed' : 'cursor-pointer hover:bg-black hover:text-white'}`}
+                        className={`border rounded-sm p-2 w-24 ${page == 1 ? 'bg-gray-300 text-gray-500 opacity-50 cursor-not-allowed' : 'cursor-pointer hover:bg-black hover:text-white'}`}
                         onClick={() => setPage((prev) => prev - 1)}
                         disabled={page === 1}>
                         Previous
                     </button>
                     <button
-                        className={`border rounded-sm p-2  w-24 ${filteredUsers.length === 0 ? 'cursor-not-allowed' : 'cursor-pointer hover:bg-black hover:text-white'}`}
+                        className={`border rounded-sm p-2  w-24 ${filteredUsers.length === 0 ? 'bg-gray-300 text-gray-500 opacity-50 cursor-not-allowed' : 'cursor-pointer hover:bg-black hover:text-white'}`}
                         onClick={() => setPage((prev) => prev + 1)}
                         disabled={filteredUsers.length === 0}>
                         Next
