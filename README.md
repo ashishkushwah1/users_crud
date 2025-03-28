@@ -4,7 +4,7 @@ Briefly describe your project here.
 
 ## Deployed Link
 
-[Live Demo](https://users-group.netlify.app/login)
+[Live Demo](https://users-crud-ashy.vercel.app/login)
 
 ## Getting Started
 
